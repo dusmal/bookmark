@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 *,
 *::before,
 *::after {
@@ -8,7 +10,6 @@
 
 body {
   line-height: 1.5;
-  background-color: red;
 }
 
 html {
@@ -29,4 +30,12 @@ a {
 ::-webkit-scrollbar {
   width: 0px;
   background: transparent;
+}
+
+button {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
 }

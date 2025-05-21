@@ -1,0 +1,190 @@
+@use "../base/variables" as *;
+@use "../utilities/animations" as *;
+
+.header {
+    position: relative;
+
+    &__wrapper {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 0;
+
+        @media (max-width: 768px) {
+            padding: 1.5rem 0;
+        }
+    }
+
+    &__logo {
+        flex: 1;
+        margin-top: 0.6rem;
+        z-index: 1000;
+    }
+
+    &__toggle {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        width: 24px;
+        height: 18px;
+        position: relative;
+        z-index: 1000;
+
+        @media (max-width: 768px) {
+            display: flex;
+        }
+
+        &-line {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: $neutral-gray;
+            transition: all 0.3s ease;
+        }
+
+        &.is-active {
+            .header__toggle-line {
+                &:nth-child(1) {
+                    transform: translateY(8px) rotate(45deg); // Adjusted for new smaller size
+                    background-color: white;
+                }
+
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+
+                &:nth-child(3) {
+                    transform: translateY(-8px) rotate(-45deg); // Adjusted for new smaller size
+                    background-color: white;
+                }
+            }
+        }
+    }
+
+    &__nav {
+        flex: 1;
+        max-width: 50rem;
+
+        @media (min-width: 769px) {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            display: none;
+
+            &.is-active {
+                display: flex;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100vw;
+                height: 100vh;
+                background-color: hsl(228.75deg 25.4% 40%);
+                align-items: center;
+                justify-content: center;
+                animation: fadeIn 0.3s ease forwards;
+                flex: none;
+                max-width: none;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            width: 80%;
+            text-align: center;
+            justify-content: center;
+        }
+    }
+
+    &__item {
+
+        @media (max-width: 768px) {
+            width: 100%;
+            border-top: 1px solid $neutral-gray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 50px;
+        }
+    }
+
+    &__link {
+        color: $neutral-gray;
+        transition: color 0.3s ease;
+
+        @media (max-width: 768px) {
+            color: white;
+            font-size: 1.25rem;
+        }
+
+        &:hover {
+            color: $accent-orange;
+        }
+    }
+
+    &__button {
+        &--login {
+            @include button-animation;
+            background-color: $accent-orange;
+            padding: 1rem 1.5rem;
+            border-radius: 5px;
+            color: white;
+
+            &:hover {
+                background-color: white;
+                color: $accent-orange;
+                box-shadow: 0 0 0 2px $accent-orange, 0 5px 20px rgba($neutral-gray, 0.4);
+            }
+
+            &:active {
+                box-shadow: 0 0 0 2px $accent-orange, 0 2px 10px rgba($accent-orange, 0.3);
+            }
+
+            @media (max-width: 768px) {
+                width: 80%;
+                margin: 3rem auto;
+                padding: 1rem;
+                font-size: 1.25rem;
+                background-color: transparent;
+                border: 2px solid white;
+                color: white;
+
+                &:hover {
+                    background-color: white;
+                    color: $neutral-dark-blue;
+                    box-shadow: none;
+                }
+
+                &:active {
+                    box-shadow: none;
+                    opacity: 0.9;
+                }
+            }
+        }
+    }
+}

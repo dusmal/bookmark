@@ -5,3 +5,18 @@ body{
     font-family: $font-primary;
     font-weight: $weight-regular;
 }
+
+.header{
+    &__nav{
+        font-size: 1.5rem;
+        color: $dark-gray;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    &__item{
+        :hover{
+            color: $accent-orange;
+        }
+    }
+}
