@@ -152,3 +152,36 @@ body {
     }
 
 }
+
+.info-modal {
+    &__title {
+        font-size: 2.5rem;
+        color: $neutral-dark-blue;
+
+        @media (max-width: 768px) {
+            font-size: 2rem;
+        }
+    }
+
+    &__description {
+        font-size: 1.5rem;
+
+        @media (max-width: 768px) {
+            font-size: 1.3rem;
+        }
+    }
+
+    &__extra {
+        font-size: 1rem;
+        color: $neutral-gray;
+    }
+
+    &__button {
+        font-weight: $weight-medium;
+        font-size: 1.6rem;
+
+        @media (max-width: 768px) {
+            font-size: 1.3rem;
+        }
+    }
+}

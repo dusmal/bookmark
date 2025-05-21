@@ -80,10 +80,10 @@
             &.is-active {
                 display: flex;
                 position: fixed;
+                flex-direction: column;
+                justify-content: space-between;
                 top: 0;
                 left: 0;
-                right: 0;
-                bottom: 0;
                 width: 100vw;
                 height: 100vh;
                 background-color: hsla(227, 26%, 35%, 0.95);
@@ -95,6 +95,10 @@
                 margin: 0;
                 padding: 0;
                 z-index: 500;
+
+                .header__menu {
+                    flex: 1;
+                }
             }
         }
     }
@@ -189,6 +193,33 @@
             }
         }
     }
+
+    &__social {
+        display: none;
+
+        @media (max-width: 768px) {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__social-link {
+        margin: 0 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    &__social-icon {
+        height: 24px;
+    }
+
 }
 
 .bookmark-logo {

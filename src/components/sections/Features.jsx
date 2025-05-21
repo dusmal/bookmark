@@ -1,35 +1,8 @@
 import React, { useState } from 'react';
-import tab1Image from '../../assets/images/illustration-features-tab-1.svg';
-import tab2Image from '../../assets/images/illustration-features-tab-2.svg';
-import tab3Image from '../../assets/images/illustration-features-tab-3.svg';
+import featuresData from '../../components/utilities/features'
 
 const Features = () => {
     const [activeTab, setActiveTab] = useState(0);
-
-    const tabsData = [
-        {
-            id: 0,
-            title: 'Simple Bookmarking',
-            heading: 'Bookmark in one click',
-            description: 'Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your favorite sites.',
-            image: tab1Image
-        },
-        {
-            id: 1,
-            title: 'Speedy Searching',
-            heading: 'Intelligent search',
-            description: 'Our powerful search feature will help you find saved sites in no time at all. No need to trawl through all of your bookmarks.',
-            image: tab2Image
-        },
-        {
-            id: 2,
-            title: 'Easy Sharing',
-            heading: 'Share your bookmarks',
-            description: 'Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of a button.',
-            image: tab3Image
-        }
-    ];
-
     const handleTabClick = (tabId) => {
         setActiveTab(tabId);
     };
@@ -47,7 +20,7 @@ const Features = () => {
 
                 <div className="features__tabs">
                     <div className="features__tab-list">
-                        {tabsData.map(tab => (
+                        {featuresData.map(tab => (
                             <button
                                 key={tab.id}
                                 className={`features__tab-button ${activeTab === tab.id ? 'active' : ''}`}
@@ -60,12 +33,12 @@ const Features = () => {
 
                     <div className="features__tab-content">
                         <div className="features__tab-image">
-                            <img src={tabsData[activeTab].image} alt={tabsData[activeTab].title} />
+                            <img src={featuresData[activeTab].image} alt={featuresData[activeTab].title} />
                         </div>
 
                         <div className="features__tab-info">
-                            <h2 className="features__tab-heading">{tabsData[activeTab].heading}</h2>
-                            <p className="features__tab-description">{tabsData[activeTab].description}</p>
+                            <h2 className="features__tab-heading">{featuresData[activeTab].heading}</h2>
+                            <p className="features__tab-description">{featuresData[activeTab].description}</p>
                             <button className="features__more-info">More Info</button>
                         </div>
                     </div>
