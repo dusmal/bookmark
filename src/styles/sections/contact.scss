@@ -79,6 +79,12 @@
         p {
             font-style: italic;
         }
+
+        img {
+            margin-top: 5px;
+        }
+
+
     }
 
     &__error-icon {
@@ -135,5 +141,17 @@
             width: 100%;
             margin-top: 2.2rem;
         }
+    }
+
+    &__joined {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+    }
+
+    &__counter {
+        width: 5rem;
+        text-align: right;
     }
 }
