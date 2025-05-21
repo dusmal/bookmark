@@ -20,6 +20,7 @@
         flex: 1;
         margin-top: 0.6rem;
         z-index: 1000;
+
     }
 
     &__toggle {
@@ -49,7 +50,7 @@
         &.is-active {
             .header__toggle-line {
                 &:nth-child(1) {
-                    transform: translateY(8px) rotate(45deg); // Adjusted for new smaller size
+                    transform: translateY(8px) rotate(45deg);
                     background-color: white;
                 }
 
@@ -58,7 +59,7 @@
                 }
 
                 &:nth-child(3) {
-                    transform: translateY(-8px) rotate(-45deg); // Adjusted for new smaller size
+                    transform: translateY(-8px) rotate(-45deg);
                     background-color: white;
                 }
             }
@@ -85,7 +86,7 @@
                 bottom: 0;
                 width: 100vw;
                 height: 100vh;
-                background-color: hsl(228.75deg 25.4% 40%);
+                background-color: hsla(227, 26%, 35%, 0.95);
                 align-items: center;
                 justify-content: center;
                 animation: fadeIn 0.3s ease forwards;
@@ -93,6 +94,7 @@
                 max-width: none;
                 margin: 0;
                 padding: 0;
+                z-index: 500;
             }
         }
     }
@@ -185,6 +187,22 @@
                     opacity: 0.9;
                 }
             }
+        }
+    }
+}
+
+.bookmark-logo {
+    &.is-menu-open {
+        .logo-text {
+            fill: white !important;
+        }
+
+        .logo-circle {
+            fill: white !important;
+        }
+
+        .logo-bookmark {
+            fill: hsla(227, 26%, 35%, 0.95) !important;
         }
     }
 }

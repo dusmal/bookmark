@@ -1,6 +1,6 @@
 .app {
   min-height: 100vh;
-  padding: 4rem 5rem;
+  padding: 4rem 10rem;
 
   @media (max-width: 768px) {
     padding: 3rem 3rem;
@@ -11,10 +11,7 @@
   }
 
   @media (min-width: 1200px) {
-    padding: 4rem 10rem; 
+    padding: 4rem 10rem;
   }
 
-  @media (min-width: 1600px) {
-    padding: 5rem 10rem; 
-  }
 }
