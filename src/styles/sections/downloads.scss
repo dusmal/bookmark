@@ -1,0 +1,103 @@
+@use "../base/variables" as *;
+@use "../utilities/animations" as *;
+
+.downloads {
+    padding: 6rem 0 8rem;
+
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    &__intro {
+        text-align: center;
+        margin-bottom: 3rem;
+        max-width: 54rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__title {
+        margin-bottom: 1rem;
+        font-size: 2rem;
+    }
+
+    &__description {
+        margin-bottom: 2rem;
+    }
+
+    &__cards {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 2rem;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__card {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 280px;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateY(-10px);
+        }
+    }
+
+    &__card-content {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    &__browser-icon {
+        height: 70px;
+        margin-bottom: 2rem;
+    }
+
+    &__browser-name {
+        margin-bottom: 0.5rem;
+    }
+
+    &__browser-version {
+        margin-bottom: 2rem;
+    }
+
+    &__dots {
+        width: 100%;
+        margin: 1.5rem 0;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__install-button {
+        @include button-animation;
+        background-color: $primary-blue;
+        color: white;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 5px;
+        font-weight: 500;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: background-color 0.3s;
+        width: 100%;
+
+        &:hover {
+            background-color: white;
+            color: $primary-blue;
+            border: 2px solid $primary-blue;
+        }
+    }
+}

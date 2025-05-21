@@ -73,3 +73,29 @@ body {
         font-size: 1.5rem;
     }
 }
+
+.downloads {
+    &__title {
+        font-size: 2.5rem;
+        color: $neutral-dark-blue;
+    }
+
+    &__description {
+        color: $neutral-gray;
+        font-size: 1.5rem;
+    }
+
+    &__install-button {
+        font-size: 1.5rem;
+    }
+
+    &__browser-version {
+        color: $neutral-gray;
+        font-size: 1.2rem;
+    }
+
+    &__browser-name {
+        font-size: 1.7rem;
+        color: $neutral-dark-blue;
+    }
+}

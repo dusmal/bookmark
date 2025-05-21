@@ -4,6 +4,7 @@
 .hero {
     padding: 4rem 0;
 
+
     &__content {
         display: flex;
         align-items: center;
@@ -78,6 +79,7 @@
         flex: 1;
         position: relative;
 
+
         img {
             width: 100%;
             display: block;
@@ -85,7 +87,7 @@
             z-index: 2;
         }
 
-        &::after {
+        &::before {
             content: '';
             position: absolute;
             width: 300%;

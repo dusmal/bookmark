@@ -1,6 +1,8 @@
 .app {
   min-height: 100vh;
   padding: 4rem 10rem;
+  position: relative;
+  overflow: hidden;
 
   @media (max-width: 768px) {
     padding: 3rem 3rem;
