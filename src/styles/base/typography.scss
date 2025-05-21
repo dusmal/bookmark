@@ -72,6 +72,11 @@ body {
     &__more-info {
         font-size: 1.5rem;
     }
+
+    &__tab-heading {
+        font-size: 2.5rem;
+        color: $neutral-dark-blue;
+    }
 }
 
 .downloads {
@@ -98,4 +103,23 @@ body {
         font-size: 1.7rem;
         color: $neutral-dark-blue;
     }
+}
+
+.faq {
+    padding: 6rem 0;
+
+    &__title {
+        font-size: 2.5rem;
+        color: $neutral-dark-blue;
+    }
+
+    &__description {
+        color: $neutral-gray;
+        font-size: 1.5rem;
+    }
+
+    &__answer {
+        font-size: 1.5rem;
+    }
+
 }

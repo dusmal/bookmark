@@ -1,0 +1,99 @@
+@use "../base/variables" as *;
+@use "../utilities/animations" as *;
+
+.faq {
+    padding: 6rem 0;
+
+    .container {
+        max-width: 70rem;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    &__intro {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    &__title {
+        margin-bottom: 1rem;
+    }
+
+
+    &__accordion {
+        margin-bottom: 3rem;
+    }
+
+    &__item {
+        border-bottom: 1px solid rgba($neutral-gray, 0.3);
+
+        &:first-child {
+            border-top: 1px solid rgba($neutral-gray, 0.3);
+        }
+    }
+
+    &__question {
+        width: 100%;
+        background: none;
+        border: none;
+        padding: 1.5rem 0;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $dark-gray;
+        transition: color 0.3s;
+
+        &:hover {
+            color: $accent-orange;
+        }
+    }
+
+    &__arrow {
+        transition: transform 0.3s ease;
+
+        &.rotate {
+            transform: rotate(180deg);
+            filter: invert(58%) sepia(86%) saturate(1436%) hue-rotate(326deg) brightness(101%) contrast(96%);
+        }
+    }
+
+    &__answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+
+        p {
+            color: $neutral-gray;
+        }
+
+        &.active {
+            max-height: 500px;
+            padding-bottom: 1.5rem;
+        }
+    }
+
+    &__cta {
+        text-align: center;
+        margin-top: 3rem;
+    }
+
+    &__more-info {
+        @include button-animation;
+        background-color: $primary-blue;
+        color: white;
+        border: none;
+        padding: 0.75rem 2rem;
+        border-radius: 5px;
+        font-weight: 500;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: white;
+            color: $primary-blue;
+            border: 2px solid $primary-blue;
+        }
+    }
+}
