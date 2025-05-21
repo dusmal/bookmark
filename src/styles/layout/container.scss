@@ -1,3 +1,5 @@
+@use "../base/variables" as *;
+
 .app {
   min-height: 100vh;
   padding: 4rem 10rem;
@@ -16,4 +18,8 @@
     padding: 4rem 10rem;
   }
 
+}
+
+.contact-wrapper {
+  background-color: $primary-blue;
 }
