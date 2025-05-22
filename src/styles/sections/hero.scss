@@ -1,0 +1,102 @@
+@use "../base/variables" as *;
+@use "../utilities/animations" as *;
+
+.hero {
+    padding: 4rem 0;
+
+
+    &__content {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        @media (max-width: 768px) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__text {
+        flex: 1;
+
+        @media (max-width: 768px) {
+            text-align: center;
+            margin-top: 2rem;
+        }
+    }
+
+    &__title {
+        margin-bottom: 2rem;
+    }
+
+    &__description {
+        margin-bottom: 4rem;
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 1rem;
+
+        @media (max-width: 768px) {
+            justify-content: center;
+        }
+    }
+
+    &__button {
+        @include button-animation;
+        padding: 0.8rem 1.5rem;
+        border-radius: 5px;
+        font-weight: $weight-medium;
+        border: 2px solid transparent;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &--chrome {
+            background-color: $primary-blue;
+            color: white;
+
+            &:hover {
+                background-color: white;
+                color: $primary-blue;
+                border: 2px solid $primary-blue;
+            }
+        }
+
+        &--firefox {
+            background-color: $light-gray;
+            color: $dark-gray;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+            &:hover {
+                background-color: white;
+                color: $dark-gray;
+                border: 2px solid $dark-gray;
+            }
+        }
+
+    }
+
+    &__image {
+        flex: 1;
+        position: relative;
+
+
+        img {
+            width: 100%;
+            display: block;
+            position: relative;
+            z-index: 2;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 300%;
+            height: 80%;
+            background-color: $primary-blue;
+            border-radius: 70px;
+            bottom: -10px;
+            right: -200%;
+            z-index: 1;
+        }
+    }
+}

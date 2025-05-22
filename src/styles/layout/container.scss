@@ -1,0 +1,25 @@
+@use "../base/variables" as *;
+
+.app {
+  min-height: 100vh;
+  padding: 4rem 10rem;
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 3rem 3rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 2rem 1.5rem;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 4rem 10rem;
+  }
+
+}
+
+.contact-wrapper {
+  background-color: $primary-blue;
+}
